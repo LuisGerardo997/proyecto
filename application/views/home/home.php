@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Residencial Río</title>
-    <link rel="icon" href="images/logo1.ico">
+    <link rel="icon" href="<?=base_url() ?>images/logo1.ico">
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css" rel="stylesheet/css/custom.css"> </head>
+    <link rel="stylesheet" href="<?= base_url() ?>css/custom.css" rel="stylesheet/css/custom.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
 
 <body>
     <div class="wrapper">
         <!-- Sidebar Holder -->
-        <nav id="sidebar">
+        <nav id="sidebar" style="overflow:auto;">
             <div class="sidebar-header">
-                <p class="text-center"> Recepcionista</p>
-                <div style="text-align:center;"><img class="img-circle" style="border: solid white 1px;" src="images/prrito.jpg">
+                <p class="text-center">Recepcionista</p>
+                <div style="text-align:center;"><img class="img-circle" style="border: solid white 1px;" src="<?= base_url() ?>images/prrito.jpg">
                     <figcaption>
                         <a href="#">
                             <p style="color:white;">Luis Gerardo</p>
@@ -28,8 +30,25 @@
             </div>
             <ul class="list-unstyled components">
                 <p style="text-align:center;"> Módulos de Control</p>
-                <li class="active"> <a href="#">Inicio</a></li>
-                <li> <a href="home/mantenimiento">Mantenimiento</a></li>
+                <li> <a href="#">Inicio</a></li>
+                <li> <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Mantenimiento</a><ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li><a href="<?= base_url() ?>mantenimiento/personas"><span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>Personas</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/habitaciones"><span class="glyphicon glyphicon-bed" aria-hidden="true">&nbsp;</span>Habitaciones</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/ubigeo"><span class="glyphicon glyphicon-globe" aria-hidden="true">&nbsp;</span>Ubigeo</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/area"><span class="glyphicon glyphicon-th-large" aria-hidden="true">&nbsp;</span>Área</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/cargo"><span class="glyphicon glyphicon-briefcase" aria-hidden="true">&nbsp;</span>Cargo</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/proveedores"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">&nbsp;</span>Proveedores</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/productos"><span class="glyphicon glyphicon-apple" aria-hidden="true">&nbsp;</span>Productos</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/servicios"><span class="glyphicon glyphicon-tags" aria-hidden="true">&nbsp;</span>Servicios</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/tipo_pago"><span class="glyphicon glyphicon-credit-card" aria-hidden="true">&nbsp;</span>Tipos de Pago</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/tipo_movimiento"><span class="glyphicon glyphicon-refresh" aria-hidden="true">&nbsp;</span>Tipos de Movimiento</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/tipo_documento"><span class="glyphicon glyphicon-list-alt" aria-hidden="true">&nbsp;</span>Tipos de Documento</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/caja"><span class="glyphicon glyphicon-usd" aria-hidden="true">&nbsp;</span>Caja</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/tipo_transaccion"><span class="glyphicon glyphicon-sort" aria-hidden="true">&nbsp;</span>Tipos de Transacción</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/ofertas"><span class="glyphicon glyphicon-gift" aria-hidden="true">&nbsp;</span>Ofertas</a></li>
+                        <li><a href="<?= base_url() ?>mantenimiento/parametros"><span class="glyphicon glyphicon-plus" aria-hidden="true">&nbsp;</span>Parámetros</a></li>
+                    </ul>
+                </li>
                 <li> <a href="#">Habitaciones</a></li>
                 <li> <a href="#">Almacén</a> </li>
                 <li> <a href="#">Reportes</a> </li>
@@ -42,17 +61,8 @@
                     <div class="navbar-header">
                         <button type="button" id="sidebarCollapse" class="navbar-btn"> <span></span> <span></span> <span></span> </button>
                     </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <div class="col-md-3">
-                            <h3>Residencial Río</h3></div>
-                        <div class="col-sm-offset-6"><img class="navbar-brand" src="images/Rio.png"></div>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">Page</a></li>
-                            <li><a href="#">Page</a></li>
-                            <li><a href="#">Page</a></li>
-                            <li><a href="#">Page</a></li>
-                        </ul>
-                    </div>
+                        <div class="col-md-10 text-center">
+                            <h3>Residencial Río</h3>
+                        </div>
                 </div>
             </nav>
-    
