@@ -13,7 +13,8 @@ class Home extends CI_Controller {
             $user = $this->session->userdata('username');
             $this->load->model('home_model');
             $this->home_model->cargo($user);
-            $data = array('cargo' => 'Recepcionista');
+            $cargo = $this->session->userdata('cargo');
+            $data = array('cargo' => '$cargo');
             $this->load->view('home/home',$data);
             $this->load->view('home/inicio');
             $this->load->view('home/footer');

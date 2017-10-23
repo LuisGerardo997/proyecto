@@ -22,7 +22,7 @@
 <div class="col-sm-4">
     <div class="panel panel-default">
         <div class="panel-heading text-center">
-            <a href="#">
+            <a href="<?= base_url() ?>clientes">
                <i class="material-icons" style="font-size:50px;">wc</i> <h4><span>Clientes</span></h4>
             </a>
         </div>

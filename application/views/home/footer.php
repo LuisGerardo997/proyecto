@@ -4,15 +4,13 @@
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="<?= base_url() ?>js/tipo_personas.js"></script>
+    <?php if($this->uri->segment(1)=='tipo_personas') {?>
+      <script src="<?= base_url() ?>js/tipo_personas.js"></script>
+    <?php };?>
+    <?php if($this->uri->segment(1)=='clientes') {?>
+      <script src="<?= base_url() ?>js/clientes.js"></script>
+    <?php };?>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $("#sidebar").niceScroll({
-                cursorcolor: '#53619d'
-                , cursorwidth: 4
-                , cursorborder: 'none'
-            });
-        });
         $('#sidebarCollapse').on('click', function () {
             $('#sidebar, #content').toggleClass('active');
             $('.collapse.in').toggleClass('in');

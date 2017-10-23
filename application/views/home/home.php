@@ -19,7 +19,7 @@
         <!-- Sidebar Holder -->
         <nav id="sidebar" style="overflow:auto;">
             <div class="sidebar-header">
-                <p class="text-center">Recepcionista</p>
+                <p class="text-center"><?php $cargo ?></p>
                 <div style="text-align:center;"><img class="img-circle" style="border: solid white 1px;" src="<?= base_url() ?>images/prrito.jpg">
                     <figcaption>
                         <a href="#">
@@ -30,7 +30,7 @@
             </div>
             <ul class="list-unstyled components">
                 <p style="text-align:center;"> Módulos de Control</p>
-                <li> <a href="#">Inicio</a></li>
+                <li> <a href="home">Inicio</a></li>
                 <li> <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Mantenimiento</a><ul class="collapse list-unstyled" id="homeSubmenu">
                         <li><a href="<?= base_url() ?>mantenimiento/personas"><span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>Personas</a></li>
                         <li><a href="<?= base_url() ?>mantenimiento/habitaciones"><span class="glyphicon glyphicon-bed" aria-hidden="true">&nbsp;</span>Habitaciones</a></li>
@@ -52,6 +52,7 @@
                 <li> <a href="#">Habitaciones</a></li>
                 <li> <a href="#">Almacén</a> </li>
                 <li> <a href="#">Reportes</a> </li>
+                <hr>
             </ul>
         </nav>
         <!-- Page Content Holder -->
