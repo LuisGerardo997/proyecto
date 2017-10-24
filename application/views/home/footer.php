@@ -13,6 +13,9 @@
     <?php if($this->uri->segment(1)=='empleados') {?>
       <script src="<?= base_url() ?>js/empleados.js"></script>
     <?php };?>
+    <?php if($this->uri->segment(1)=='tipo_habitaciones') {?>
+      <script src="<?= base_url() ?>js/tipo_habitaciones.js"></script>
+    <?php };?>
     <script type="text/javascript">
         $('#sidebarCollapse').on('click', function () {
             $('#sidebar, #content').toggleClass('active');
