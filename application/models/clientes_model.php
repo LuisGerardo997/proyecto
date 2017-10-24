@@ -20,4 +20,7 @@ class Clientes_model extends CI_Model{
       $consulta = $this->db->get();
       return $consulta->result();
     }
+    function guardar($guardar){
+      $this->db->insert('persona',$registro);
+    }
 }

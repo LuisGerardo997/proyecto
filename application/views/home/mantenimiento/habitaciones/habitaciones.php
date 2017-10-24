@@ -22,7 +22,7 @@
 <div class="col-sm-5">
     <div class="panel panel-default">
         <div class="panel-heading text-center">
-            <a href="<?= base_url() ?>habitaciones">
+            <a href="<?= base_url() ?>habitaciones_sub">
                <i class="material-icons" style="font-size:50px;">wc</i> <h4><span>Habitaciones</span></h4>
             </a>
         </div>

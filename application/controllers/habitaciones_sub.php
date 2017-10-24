@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Clientes extends CI_Controller {
+class Habitaciones_sub extends CI_Controller {
   function __construct(){
     parent::__construct();
-    $this->load->model('Clientes_model');
+    $this->load->model('Habitaciones_sub_model');
   }
 
 
@@ -12,7 +12,9 @@ class Clientes extends CI_Controller {
   {
     if($this->session->userdata('username')){
       $this->load->view('home/home');
-      $this->load->view('home/mantenimiento/registros/clientes');
+      $data0 = $this->Habitaciones_sub->select()
+      $option->form_dropdown('tipo',$data0)
+      $this->load->view('home/mantenimiento/habitaciones/Habitaciones_sub');
       $this->load->view('home/footer');
 
     }else{
@@ -22,12 +24,15 @@ class Clientes extends CI_Controller {
   public function mostrar(){
     if ($this->input->is_ajax_request()){
       $buscar = $this->input->post('buscar');
-      $datos = $this->Clientes_model->mostrar($buscar);
+      $datos = $this->tipo_habitaciones_model->mostrar($buscar);
       echo json_encode($datos);
     }else{
       show_404();
     }
   }
+}
+
+
   public function guardar(){
     if ($this->input->is_ajax_request()){
         $tipo = $this->input->post('tipo');
@@ -38,7 +43,7 @@ class Clientes extends CI_Controller {
           'Precio_Tipo_Habitacion' => $precio,
           'Max_H' => $capacidad,
         );
-        $this->Clientes_model->guardar($data);
+        $this->tipo_habitaciones_model->guardar($data);
         echo 'Registro guardado exitosamente';
     }else{
       show_404();

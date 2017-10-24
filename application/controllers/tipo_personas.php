@@ -4,6 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Tipo_personas extends CI_Controller {
   function __construct(){
     parent::__construct();
+
+    $this->load->model('Tipo_personas_model');
   }
 
 
@@ -21,9 +23,21 @@ class Tipo_personas extends CI_Controller {
   public function mostrar(){
     if ($this->input->is_ajax_request()){
       $buscar = $this->input->post('buscar');
-      $this->load->model('Personas_model');
-      $datos = $this->Personas_model->mostrar($buscar);
+      $datos = $this->Tipo_personas_model->mostrar($buscar);
       echo json_encode($datos);
+    }else{
+      show_404();
+    }
+  }
+
+  public function guardar(){
+    if ($this->input->is_ajax_request()){
+        $tipo = $this->input->post('tipo');
+        $data = array(
+          'Tipo_Persona' => $tipo,
+        );
+        $this->Tipo_personas_model->guardar($data);
+        echo 'Registro guardado exitosamente';
     }else{
       show_404();
     }

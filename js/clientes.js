@@ -6,6 +6,21 @@ function inicio(){
     var buscar = $('#buscar').val();
     mostrardatos(buscar);
   })
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').focus();
+  })
+  $('#enviar').on('click',function(){
+    $.ajax({
+      url:$('#form').attr('action'),
+      type:$('#form').attr('method'),
+      data:$('#form').serialize(),
+      success:function(mensaje){
+        mostrardatos('');
+        document.getElementById('form').reset();
+        alert(mensaje);
+      }
+    })
+  })
 }
 function mostrardatos(valor){
   $.ajax({
