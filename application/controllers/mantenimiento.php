@@ -16,4 +16,15 @@ class Mantenimiento extends CI_Controller {
     }
 
   }
+
+  public function habitaciones(){
+    if($this->session->userdata('username')){
+      $this->load->view('home/home');
+      $this->load->view('home/mantenimiento/habitaciones/habitaciones');
+      $this->load->view('home/footer');
+    }else{
+        header('Location:login');
+    }
+
+  }
 }

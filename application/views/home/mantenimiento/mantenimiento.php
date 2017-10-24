@@ -4,7 +4,7 @@
 <div class="col-sm-3">
     <div class="panel panel-default">
         <div class="panel-heading text-center">
-            <a href="#">
+            <a href="<?= base_url() ?>mantenimiento/habitaciones">
                 <h4><span class="glyphicon glyphicon-bed text-left" aria-hidden="true">&nbsp;</span><span>Habitaciones</span></h4>
             </a>
         </div>

@@ -31,7 +31,7 @@
 <div class="col-sm-4">
     <div class="panel panel-default">
         <div class="panel-heading text-center">
-            <a href="#">
+            <a href="<?= base_url() ?>empleados">
                <i class="material-icons" style="font-size:50px;">person</i> <h4><span>Empleados</span></h4>
             </a>
         </div>

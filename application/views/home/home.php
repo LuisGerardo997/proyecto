@@ -30,7 +30,7 @@
             </div>
             <ul class="list-unstyled components">
                 <p style="text-align:center;"> Módulos de Control</p>
-                <li> <a href="home">Inicio</a></li>
+                <li> <a href="<?= base_url() ?>home">Inicio</a></li>
                 <li> <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Mantenimiento</a><ul class="collapse list-unstyled" id="homeSubmenu">
                         <li><a href="<?= base_url() ?>mantenimiento/personas"><span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>Personas</a></li>
                         <li><a href="<?= base_url() ?>mantenimiento/habitaciones"><span class="glyphicon glyphicon-bed" aria-hidden="true">&nbsp;</span>Habitaciones</a></li>
@@ -53,6 +53,7 @@
                 <li> <a href="#">Almacén</a> </li>
                 <li> <a href="#">Reportes</a> </li>
                 <hr>
+                <a href="<?= base_url() ?>login/cerrar_sesion"><span class="glyphicon glyphicon-log-out" aria-hidden="true">Cerrar Sesión</span></a>
             </ul>
         </nav>
         <!-- Page Content Holder -->
