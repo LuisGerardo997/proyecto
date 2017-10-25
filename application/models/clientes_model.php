@@ -21,6 +21,20 @@ class Clientes_model extends CI_Model{
       return $consulta->result();
     }
     function guardar($guardar){
-      $this->db->insert('persona',$registro);
+      if ($this->db->insert('persona',$guardar)){
+        return 0;
+      }else{
+        return 0;
+    }
+  }
+    function select(){
+      $this->db->select('Cod_Tipo_Persona, Tipo_Persona');
+      $resultado= $this->db->get('tipo_persona');
+      return $resultado -> result_array();
+    }
+    function select1(){
+      $this->db->select('Cod_Ciudad, Ciudad');
+      $resultado= $this->db->get('ubigeo');
+      return $resultado -> result_array();
     }
 }

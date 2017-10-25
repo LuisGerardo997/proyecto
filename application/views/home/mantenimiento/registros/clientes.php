@@ -43,7 +43,6 @@
           <h3 class="modal-title" id="myModalLabel">Registro de Clientes</h3>
         </div>
       </br>
-      </br>
           <form class="form text-center" action='<?= base_url() ?>clientes/guardar' method="post" id="form">
             <div class="form-group col-sm-4">
               <label for="nombre">DNI</label>
@@ -51,56 +50,85 @@
             </div>
             <div class="form-group col-sm-4">
               <label for="nombre">Nombres</label>
-              <input type="text" class="form-control" placeholder="(S/.)" name="nombres"/>
+              <input type="text" class="form-control" placeholder="Nombres" name="nombres"/>
             </div>
           <div class="form-group col-sm-4">
             <label for="nombre">Apellido paterno</label>
-            <input type="text" class="form-control" placeholder="" name="apellidos"/>
+            <input type="text" class="form-control" placeholder="Apellido paterno" name="apellido_p"/>
           </div>
           <div class="form-group col-sm-4">
             <label for="nombre">Apellido materno</label>
-            <input type="text" class="form-control" placeholder="apellidos" name="apellidos"/>
+            <input type="text" class="form-control" placeholder="Apellido materno" name="apellido_m"/>
           </div>
           <div class="form-group col-sm-4">
             <label for="nombre">Género</label>
-            <input type="text" class="form-control" placeholder="apellidos" name="apellidos"/>
+            <select class="form-control" name="genero">
+              <option value=""></option>
+              <option values="m">Masculino</option>
+              <option values="f">Femenino</option>
+            </select>
           </div>
           <div class="form-group col-sm-4">
-            <label for="nombre">Tipo de persona</label>
-            <input type="text" class="form-control" placeholder="apellidos" name="apellidos"/>
+            <label for="nombre">Tipo de Persona</label>
+            <select name='tipo_p' class="form-control">
+            <option value="">Tipo Persona</option>
+            <?php foreach($tipo_p as $fila):?>
+              <option value='<?= $fila["Cod_Tipo_Persona"]?>'><?= $fila['Tipo_Persona'] ?></option>
+            <?php endforeach; ?>
+          </select>
           </div>
           <div class="form-group col-sm-4">
             <label for="nombre">Ciudad nacimiento</label>
-            <input type="text" class="form-control" placeholder="apellidos" name="apellidos"/>
+            <select name='ciudad_n' class="form-control">
+              <option values="">Ciudad de Nacimiento</option>
+            <?php foreach($ciudad as $fila):?>
+              <option value='<?= $fila["Cod_Ciudad"]?>'><?= $fila['Ciudad'] ?></option>
+            <?php endforeach; ?>
+          </select>
           </div>
           <div class="form-group col-sm-4">
             <label for="nombre">Ciudad de residencia</label>
-            <input type="text" class="form-control" placeholder="apellidos" name="apellidos"/>
+            <select name='ciudad_r' class="form-control">
+              <option values=""></option>
+            <?php foreach($ciudad as $fila):?>
+              <option value='<?= $fila["Cod_Ciudad"]?>'><?= $fila['Ciudad'] ?></option>
+            <?php endforeach; ?>
+          </select>
           </div>
           <div class="form-group col-sm-4">
             <label for="nombre">Cuenta bancaria</label>
-            <input type="text" class="form-control" placeholder="apellidos" name="apellidos"/>
+            <input type="text" class="form-control" placeholder="Cuenta bancaria" name="cuenta_b"/>
           </div>
           <div class="form-group col-sm-4">
             <label for="nombre">Entidad bancaria</label>
-            <input type="text" class="form-control" placeholder="apellidos" name="apellidos"/>
+            <input type="text" class="form-control" placeholder="Entidad bancaria" name="entidad_b"/>
           </div>
           <div class="form-group col-sm-4">
             <label for="nombre">Email</label>
-            <input type="text" class="form-control" placeholder="apellidos" name="apellidos"/>
+            <input type="text" class="form-control" placeholder="Email" name="email"/>
           </div>
           <div class="form-group col-sm-4">
             <label for="nombre">Dirección</label>
-            <input type="text" class="form-control" placeholder="apellidos" name="apellidos"/>
+            <input type="text" class="form-control" placeholder="Dirección" name="direccion"/>
           </div>
           <div class="form-group col-sm-4">
             <label for="nombre">Telefono móvil</label>
-            <input type="text" class="form-control" placeholder="apellidos" name="apellidos"/>
+            <input type="text" class="form-control" placeholder="Telefono móvil" name="tel"/>
           </div>
           <div class="form-group col-sm-4">
             <label for="nombre">Telefono fijo</label>
-            <input type="text" class="form-control" placeholder="apellidos" name="apellidos"/>
+            <input type="text" class="form-control" placeholder="Telefono fijo" name="tel_f"/>
           </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <br/>
         <br/>
         <br/>

@@ -52,9 +52,11 @@
           </div>
           <div class="form-group col-sm-5">
             <label for="nombre">Tipo de habitación</label>
-            <select class="form-control" name="tipo"/>
-              <option value="">Seleccione...</option>
-              <?php echo $option; ?>
+            <select name='tipo' class="form-control">
+            <option value="">sdfas</option>
+            <?php foreach($registro as $fila):?>
+              <option value='<?= $fila["Cod_Tipo_Habitacion"]?>'><?= $fila['Tipo_Habitacion'] ?></option>
+            <?php endforeach; ?>
           </select>
           </div>
         <div class="form-group col-sm-6 col-sm-offset-3">

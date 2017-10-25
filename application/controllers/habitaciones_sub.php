@@ -11,10 +11,13 @@ class Habitaciones_sub extends CI_Controller {
   public function index()
   {
     if($this->session->userdata('username')){
+      $this->load->helper('form');
       $this->load->view('home/home');
-      $data0 = $this->Habitaciones_sub->select()
-      $option->form_dropdown('tipo',$data0)
-      $this->load->view('home/mantenimiento/habitaciones/Habitaciones_sub');
+      $data = $this->Habitaciones_sub_model->select();
+      $resulta = array(
+        'registro' => $data,
+      );
+      $this->load->view('home/mantenimiento/habitaciones/Habitaciones_sub',$resulta);
       $this->load->view('home/footer');
 
     }else{
@@ -30,9 +33,6 @@ class Habitaciones_sub extends CI_Controller {
       show_404();
     }
   }
-}
-
-
   public function guardar(){
     if ($this->input->is_ajax_request()){
         $tipo = $this->input->post('tipo');

@@ -22,6 +22,7 @@ function inicio(){
       }
     })
   })
+
 }
 function mostrardatos(valor){
   $.ajax({

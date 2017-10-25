@@ -25,7 +25,7 @@ class Habitaciones_sub_model extends CI_Model{
     }
     function select(){
       $this->db->select('Cod_Tipo_Habitacion, Tipo_Habitacion');
-      $resultado = $this->db->get('tipo_habitacion');
-      return $resultado->result();
+      $resultado= $this->db->get('tipo_habitacion');
+      return $resultado -> result_array();
     }
 }
