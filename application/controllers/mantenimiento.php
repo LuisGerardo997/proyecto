@@ -4,11 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Mantenimiento extends CI_Controller {
   function __construct(){
     parent::__construct();
+      $this->load->view('home/home');
+      $this->load->view('home/bar1');
   }
 
   public function personas(){
     if($this->session->userdata('username')){
-      $this->load->view('home/home');
       $this->load->view('home/mantenimiento/registros/personas');
       $this->load->view('home/footer');
     }else{
@@ -19,7 +20,6 @@ class Mantenimiento extends CI_Controller {
 
   public function habitaciones(){
     if($this->session->userdata('username')){
-      $this->load->view('home/home');
       $this->load->view('home/mantenimiento/habitaciones/habitaciones');
       $this->load->view('home/footer');
     }else{

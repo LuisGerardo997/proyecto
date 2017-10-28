@@ -7,21 +7,45 @@
       <p class="text-center"> <img src="<?= base_url() ?>images/Rio.png"></p>
       <br/>
       <div class="text-center">Panel de filtrado</div>
-      <form class="form-horizontal" action="" method="post">
+      <form class="form-horizontal" action="" method="post" id="form_actualizar">
         <br>
         <br>
-        <div class="col-sm-3">Buscar:</div>
-        <div class="col-sm-9">
-          <input class="form-control" placeholder="Buscar..." name="buscar" id="buscar" />
+        <div class="text-center">
+        <div class="col-sm-6">
+          <label for="habitacion_e">Habitación</label>
+          <input class="form-control" type="number" name="habitacion_e" id="habitacion_e" />
+          <input class="form-control" type="hidden" name="idselect" id="idselect" />
+        </div>
+        <div class="col-sm-6">
+          <label for="nombre">Tipo</label>
+          <select name='tipo' id="tipo" class="form-control">
+          <option value=""></option>
+          <?php foreach($registro as $fila):?>
+            <option value='<?= $fila['cod_tipo_habitacion'] ?>'><?= $fila['tipo_habitacion'] ?></option>
+          <?php endforeach; ?>
+        </select>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col-sm-6 col-sm-offset-3">
+          <label for="piso_e">Piso</label>
+          <input class="form-control" type="number" name="piso_e" id="piso_e" />
+        </div>
         </div>
       </form>
+    </br>
     </br>
   </br>
 </br>
 <div class="panel-footer text-center">
-  <p>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Insertar Registro</button>
-  </p>
+<div class="btn-group">
+    <p>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Crear</button>
+      <button type="button" class="btn btn-primary" id="actualizar"><spam class="glyphicon glyphicon-refresh" aria-hidden="true"></spam> Actualizar</button>
+    </p>
+</div>
 </div>
 </div>
 </div>
@@ -45,7 +69,7 @@
       </div>
     </br>
     </br>
-        <form class="form text-center" action='<?= base_url() ?>tipo_habitaciones/guardar' method="post" id="form">
+        <form class="form text-center" action='<?= base_url() ?>habitaciones_sub/guardar' method="post" id="form">
           <div class="form-group col-sm-5 col-sm-offset-1">
             <label for="nombre">Habitación</label>
               <input type="number" class="form-control" placeholder="Habitaciones" name="habitacion"/>
@@ -53,15 +77,15 @@
           <div class="form-group col-sm-5">
             <label for="nombre">Tipo de habitación</label>
             <select name='tipo' class="form-control">
-            <option value="">sdfas</option>
+            <option value=""></option>
             <?php foreach($registro as $fila):?>
-              <option value='<?= $fila["Cod_Tipo_Habitacion"]?>'><?= $fila['Tipo_Habitacion'] ?></option>
+              <option value='<?= $fila['cod_tipo_habitacion'] ?>'><?= $fila['tipo_habitacion'] ?></option>
             <?php endforeach; ?>
           </select>
           </div>
         <div class="form-group col-sm-6 col-sm-offset-3">
-          <label for="nombre">Capacidad</label>
-          <input type="number" class="form-control" placeholder="Capacidad" name="capacidad"/>
+          <label for="nombre">Piso</label>
+          <input type="number" class="form-control" placeholder="Piso" name="piso"/>
         </div>
       <br/>
       <br/>

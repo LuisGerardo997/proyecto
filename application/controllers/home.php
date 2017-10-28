@@ -16,11 +16,15 @@ class Home extends CI_Controller {
             $cargo = $this->session->userdata('cargo');
             $data = array('cargo' => '$cargo');
             $this->load->view('home/home',$data);
+            $this->load->view('home/bar1');
             $this->load->view('home/inicio');
             $this->load->view('home/footer');
 
         }else{
             header('Location:login');
         }
+    }
+    public function gestionar_db(){
+      $this->load->view('panel_control');
     }
 }

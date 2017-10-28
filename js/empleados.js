@@ -9,7 +9,7 @@ function inicio(){
 }
 function mostrardatos(valor){
   $.ajax({
-    url:"http://localhost:8080/proyecto/empleados/mostrar",
+    url:"http://localhost/proyecto/empleados/mostrar",
     type: "POST",
     data:{buscar:valor},
     success:function(respuesta){
@@ -20,7 +20,7 @@ function mostrardatos(valor){
       html+='<tr><th class="text-center">DNI</th><th class="text-center">Nombres</th><th class="text-center">Apellidos</th><th class="text-center">Ciudad</th><th class="text-center">Estado Civil</th></tr>';
       html+='</thead><tbody>';
       for (var i = 0; i < registros.length;i++){
-        html+='<tr><td>'+registros[i]['Cod_Persona']+'</td><td>'+registros[i]['Nombres']+'</td><td>'+registros[i]['Apellido_Paterno']+" "+registros[i]['Apellido_Materno']+'</td><td>'+registros[i]['Ciudad']+'</td><td>'+registros[i]['Estado_Civil']+'</td><td></tr>';
+        html+='<tr><td>'+registros[i]['cod_persona']+'</td><td>'+registros[i]['nombres']+'</td><td>'+registros[i]['apellido_paterno']+" "+registros[i]['apellido_materno']+'</td><td>'+registros[i]['ciudad']+'</td><td>'+registros[i]['estado_civil']+'</td><td></tr>';
 
       };
       html+='</tbody></table>';

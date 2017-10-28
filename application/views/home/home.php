@@ -8,10 +8,10 @@
     <title>Residencial Río</title>
     <link rel="icon" href="<?=base_url() ?>images/logo1.ico">
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=base_url() ?>css/bootstrap.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>css/custom.css" rel="stylesheet/css/custom.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="<?= base_url() ?>css/material-icons.css" rel="stylesheet">
     </head>
 
 <body>
@@ -56,15 +56,3 @@
                 <a href="<?= base_url() ?>login/cerrar_sesion"><span class="glyphicon glyphicon-log-out" aria-hidden="true">Cerrar Sesión</span></a>
             </ul>
         </nav>
-        <!-- Page Content Holder -->
-        <div id="content">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" id="sidebarCollapse" class="navbar-btn"> <span></span> <span></span> <span></span> </button>
-                    </div>
-                        <div class="col-md-10 text-center">
-                            <h3>Residencial Río</h3>
-                        </div>
-                </div>
-            </nav>

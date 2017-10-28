@@ -6,7 +6,7 @@ function inicio(){
     var buscar = $('#buscar').val();
     mostrardatos(buscar);
   })
-  
+
   $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').focus();
   })
@@ -26,7 +26,7 @@ function inicio(){
 }
 function mostrardatos(valor){
   $.ajax({
-    url:"http://localhost:8080/proyecto/tipo_personas/mostrar",
+    url:"http://localhost/proyecto/tipo_personas/mostrar",
     type: "POST",
     data:{buscar:valor},
     success:function(respuesta){
@@ -37,7 +37,7 @@ function mostrardatos(valor){
       html+='<tr><th class="text-center">Código</th><th class="text-center">Tipo de persona</th></tr>';
       html+='</thead><tbody>';
       for (var i = 0; i < registros.length;i++){
-        html+='<tr><td>'+registros[i]['Cod_Tipo_Persona']+'</td><td>'+registros[i]['Tipo_Persona']+'</td></tr>';
+        html+='<tr><td>'+registros[i]['cod_tipo_persona']+'</td><td>'+registros[i]['tipo_persona']+'</td></tr>';
 
       };
       html+='</tbody></table>';

@@ -70,11 +70,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
+/*
+$motor=$_POST['motor_db'];
+$server=$_POST['server'];
+$port=$_POST['puerto'];
+$user=$_POST['user'];
+$pass=$_POST['pass'];
+$base=$_POST['db'];
+*/
 
-$active_group = 'mysql';
+
+$active_group = 'default';
 $query_builder = TRUE;
 
-$db['mysql'] = array(
+$db['default'] = array(
 	'dsn'	=> '',
 	'port' => '3306',
 	'hostname' => 'localhost',
@@ -82,6 +91,29 @@ $db['mysql'] = array(
 	'password' => 'Paolochivo2017',
 	'database' => 'residencial_rio_db',
 	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+/*
+$db['mysql'] = array(
+	'dsn'	=> '',
+	'port' => $port,
+	'hostname' => $server,
+	'username' => $user,
+	'password' => $pass,
+	'database' => $base,
+	'dbdriver' => $motor,
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
@@ -116,13 +148,13 @@ $db['mssql'] = array(
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE
-);
+); */
 $db['postgresql'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'postgres',
 	'password' => '12345',
-	'database' => 'usuario',
+	'database' => 'residencial_rio_db',
 	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

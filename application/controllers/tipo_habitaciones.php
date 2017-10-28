@@ -34,9 +34,9 @@ class Tipo_habitaciones extends CI_Controller {
         $precio = $this->input->post('precio');
         $capacidad = $this->input->post('capacidad');
         $data = array(
-          'Tipo_Habitacion' => $tipo,
-          'Precio_Tipo_Habitacion' => $precio,
-          'Max_H' => $capacidad,
+          'tipo_habitacion' => $tipo,
+          'precio_tipo_habitacion' => $precio,
+          'max_h' => $capacidad,
         );
         $this->tipo_habitaciones_model->guardar($data);
         echo 'Registro guardado exitosamente';

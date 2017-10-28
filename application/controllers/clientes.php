@@ -12,11 +12,14 @@ class Clientes extends CI_Controller {
   {
     if($this->session->userdata('username')){
       $this->load->view('home/home');
+      $this->load->view('home/bar2');
       $data = $this->Clientes_model->select();
       $data1 = $this->Clientes_model->select1();
+      $data2 = $this->Clientes_model->select2();
       $resulta = array(
         'tipo_p' => $data,
         'ciudad' => $data1,
+        'ec' => $data2,
       );
       $this->load->view('home/mantenimiento/registros/clientes',$resulta);
       $this->load->view('home/footer');
@@ -42,6 +45,7 @@ class Clientes extends CI_Controller {
         $apellido_m = $this->input->post('apellido_m');
         $genero = $this->input->post('genero');
         $tipo_p = $this->input->post('tipo_p');
+        $ec = $this->input->post('ec');
         $ciudad_n = $this->input->post('ciudad_n');
         $ciudad_r = $this->input->post('ciudad_r');
         $cuenta_b = $this->input->post('cuenta_b');
@@ -52,28 +56,29 @@ class Clientes extends CI_Controller {
         $tel_f = $this->input->post('tel_f');
         $capacidad = $this->input->post('capacidad');
         $data = array(
-          'Cod_Persona' => $dni,
-          'Cod_Ciudad_Nacimiento' => $ciudad_n,
-          'Cod_Ciudad_Direccion' => $ciudad_r,
-          'Cod_Tipo_Persona' => $tipo_p,
-          'Nombres' => $nombres,
-          'Apellido_Paterno' => $apellido_p,
-          'Apellido_Materno' => $apellido_m,
-          'Email' => $email,
-          'Direccion' =>  $direccion,
-          'Nro_Cuenta_Bancaria' => $cuenta_b,
-          'Nombre_Banco' => $entidad_b,
-          'Tel_Domicilio' => $tel_f,
-          'Tel_Movil' => $tel,
-          'Genero' => $genero,
-          'Estado' => '0',
+          'cod_persona' => $dni,
+          'cod_ciudad_nacimiento' => $ciudad_n,
+          'cod_ciudad_direccion' => $ciudad_r,
+          'cod_tipo_persona' => $tipo_p,
+          'cod_estado_civil' => $ec,
+          'nombres' => $nombres,
+          'apellido_paterno' => $apellido_p,
+          'apellido_materno' => $apellido_m,
+          'email' => $email,
+          'direccion' =>  $direccion,
+          'nro_cuenta_bancaria' => $cuenta_b,
+          'nombre_banco' => $entidad_b,
+          'tel_domicilio' => $tel_f,
+          'tel_movil' => $tel,
+          'genero' => $genero,
+          'estado' => '0',
         );
         if ($this->Clientes_model->guardar($data)){
           echo 'Registro guardado exitosamente';
         }else{
           echo 'Registro fallido';
         }
-      
+
     }else{
       show_404();
     }

@@ -5,10 +5,10 @@ class Tipo_habitaciones_model extends CI_Model{
         parent::__construct();
     }
     function mostrar($data){
-      $this->db->like('Cod_Tipo_Habitacion',$data);
-      $this->db->or_like('Tipo_Habitacion',$data);
-      $this->db->or_like('Precio_Tipo_Habitacion',$data);
-      $this->db->or_like('Max_H',$data);
+      $this->db->like('cod_tipo_habitacion',$data);
+      $this->db->or_like('tipo_habitacion',$data);
+      $this->db->or_like('precio_tipo_habitacion',$data);
+      $this->db->or_like('max_h',$data);
       $consulta = $this->db->get('tipo_habitacion');
       return $consulta->result();
     }
@@ -16,7 +16,7 @@ class Tipo_habitaciones_model extends CI_Model{
       $num = $this->db->count_all('tipo_habitacion');
       $num = $num+1;
       $array1 = array(
-        'Cod_Tipo_Habitacion' => $num,
+        'cod_tipo_habitacion' => $num,
       );
       $registro = array_merge($array1,$guardar);
       $this->db->insert('tipo_habitacion',$registro);
